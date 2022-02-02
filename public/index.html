@@ -5,18 +5,20 @@
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="theme-color" content="#000000">
-    <!--
-      manifest.json provides metadata used when your web app is added to the
-      homescreen on Android. See https://developers.google.com/web/fundamentals/engage-and-retain/web-app-manifest/
-    -->
-    <link rel="manifest" href="%PUBLIC_URL%/manifest.json">
-    <link rel="icon" href="%PUBLIC_URL%/favicon.ico">
-    <title>Elm App</title>
+    <link rel="icon" href="@PUBLIC_URL@/assets/favicon.ico">
+    <link rel="stylesheet" href="https://unpkg.com/tachyons@4.12.0/css/tachyons.min.css"/>
+    <script src="main.js"></script>
+    <title>Jon Ringer</title>
 </head>
 <body>
-    <noscript>
-        You need to enable JavaScript to run this app.
-    </noscript>
-    <div id="root"></div>
+  <noscript>
+    You need to enable JavaScript to run this app.
+  </noscript>
+  <div id="myapp"></div>
+  <script>
+    var app = Elm.Main.init({
+          node: document.getElementById('myapp')
+        });
+  </script>
 </body>
 </html>

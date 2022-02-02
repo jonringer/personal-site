@@ -12,9 +12,16 @@
         devShell = prev.mkShell {
           nativeBuildInputs = with prev.elmPackages; [
             elm
+            elm-live
             elm-review
             elm-test
           ];
+
+          shellHook = ''
+            dev() {
+              elm-live src/Main.elm --start-page=public/index.html -- --output=main.js
+            }
+          '';
         };
       };
       pkgsForSystem = system: import nixpkgs {
